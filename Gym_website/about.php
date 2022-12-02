@@ -95,7 +95,7 @@
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Contact</a>
                         </div>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 d-none d-lg-block">Join Us</a>
+                        <a href="" class="btn btn-primary py-md-3 px-md-5 d-none d-lg-block">Admin</a>
                     </div>
                 </nav>
             </div>
