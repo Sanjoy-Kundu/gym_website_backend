@@ -65,104 +65,6 @@
                 <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count-symbol bg-warning"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../Frontend/dashboard/assets/images/faces/face4.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../Frontend/dashboard/assets/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../Frontend/dashboard/assets/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count-symbol bg-danger"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="mdi mdi-calendar"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
-                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="mdi mdi-settings"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
-                    <p class="text-gray ellipsis mb-0"> Update dashboard </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="mdi mdi-link-variant"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
-                    <p class="text-gray ellipsis mb-0"> New admin wow! </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">See all notifications</h6>
-              </div>
-            </li>
-            <li class="nav-item nav-logout d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-power"></i>
-              </a>
-            </li>
-            <li class="nav-item nav-settings d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-format-line-spacing"></i>
-              </a>
-            </li>
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
@@ -189,30 +91,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../index.html">
+              <a class="nav-link" href="../dashboard.php">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Basic UI Elements</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../pages/icons/mdi.html">
-                <span class="menu-title">Icons</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
-              </a>
-            </li>
+        
+        
             <li class="nav-item">
               <a class="nav-link" href="../../pages/forms/basic_elements.html">
                 <span class="menu-title">Forms</span>
@@ -226,8 +111,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/tables/basic-table.html">
-                <span class="menu-title">Tables</span>
+              <a class="nav-link" href="./basic-table.php">
+                <span class="menu-title">All Information Table</span>
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
@@ -246,23 +131,6 @@
                   <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
                 </ul>
               </div>
-            </li>
-            <li class="nav-item sidebar-actions">
-              <span class="nav-link">
-                <div class="border-bottom">
-                  <h6 class="font-weight-normal mb-3">Projects</h6>
-                </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
-                <div class="mt-4">
-                  <div class="border-bottom">
-                    <p class="text-secondary">Categories</p>
-                  </div>
-                  <ul class="gradient-bullet-list mt-4">
-                    <li>Free</li>
-                    <li>Pro</li>
-                  </ul>
-                </div>
-              </span>
             </li>
           </ul>
         </nav>

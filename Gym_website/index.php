@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>GYMSTER - Gym HTML Template</title>
+    <title>GYMSTER - Gym</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -95,7 +95,7 @@
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Contact</a>
                         </div>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 d-none d-lg-block">S-panel</a>
+                        <a href="register.php" class="btn btn-primary py-md-3 px-md-5 d-none d-lg-block">S-panel</a>
                     </div>
                 </nav>
             </div>
