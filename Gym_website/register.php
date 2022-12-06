@@ -35,19 +35,19 @@
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                 <form class="pt-3" action="registration_validation.php" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="user_name">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="user_name" value="<?php if(isset($_SESSION["name"])){echo $_SESSION["name"];}?>">
                   <?php if(isset($_SESSION["name_error"])):?>
                     <span class="text-danger"><?=$_SESSION["name_error"]?></span>
                     <?php endif;?>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="user_email">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="user_email" value="<?php if(isset($_SESSION["email"])){echo $_SESSION["email"];}?>">
                     <?php if(isset($_SESSION["email_error"])):?>
                       <span class="text-danger"><?=$_SESSION["email_error"]?></span>
                       <?php endif;?>
                   </div>
                   <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="District" name="user_district">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="District" name="user_district" value="<?php if(isset($_SESSION["district"])){echo $_SESSION["district"];}?>">
                   <?php if(isset($_SESSION["district_error"])):?>
                     <span class="text-danger"><?=$_SESSION["district_error"]?></span>
                     <?php endif;?>

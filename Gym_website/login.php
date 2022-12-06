@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,17 +29,23 @@
                 <div class="brand-logo">
                 <h2>GYM-<span class="text-danger">MASTER</span></h2>
                 </div>
+                <?php if(isset($_SESSION["registration_success"])):?>
+                    <div class="alert alert-success"><?=$_SESSION["registration_success"]?></div>
+                    <?php endif;?>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
+                <form class="pt-3" action="login_validation.php" method="POST">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" name="login_email" value="">
+                      <?php if(isset($_SESSION["login_error"])):?>
+                        <span class="text-danger"><?=$_SESSION["login_error"] ?></span>
+                        <?php endif;?>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="login_password" value="">
                   </div>
                   <div class="mt-3">
-                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                    <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">
@@ -47,6 +54,7 @@
                     </div>
                     <a href="reset.php" class="auth-link text-black">Change Password?</a>
                   </div>
+                  <?php session_unset();?>
                   <div class="mb-2">
                     <button type="button" class="btn btn-block btn-facebook auth-form-btn">
                       <i class="mdi mdi-facebook me-2"></i>Connect using facebook </button>

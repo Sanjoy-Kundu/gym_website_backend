@@ -1,5 +1,11 @@
 <?php
 session_start();
+require_once "db_connection.php";
+if($db_connect){
+	echo "db con successfully";
+}else{
+	echo "not good";
+}
 $userName = $_POST['user_name'];
 $userEmail = $_POST['user_email'];
 $userPassword = $_POST["user_password"];
@@ -16,24 +22,31 @@ if($userPhoto["name"]){
 	$imageNameExplode = explode(".", $imageName);
 	$imageNameExtension = end($imageNameExplode);
 		if($imageNameExtension == 'jpg' || $imageNameExtension == "png" || $imageNameExtension == "svg"){
-				echo "good";
+				
+			if($userPhoto['size'] <= 200000){
+				if($userPhoto['error'] == 0){
+					$source = $userPhoto["tmp_name"];
+					$destination = "uploadImage/ProfileImages/sanjoy.jpg";
+					move_uploaded_file($source, $destination);
+					}
+				}else{
+				$_SESSION["photo_error"] = "Image size must be 2 mb";
+				$error_status = true;
+				}
+			}
+			else{
+				$_SESSION["photo_error"] = "Extensition must be jpg, png, svg";
+				$error_status = true;
+			}
 		}else{
-			$_SESSION["photo_error"] = "Extensition must be jpg, png, svg";
-			header('location: register.php');
-		}
-/* 
-	print_r($imageNameExplode);
-	print_r($imageNameExtension); */
-
-}else{
-	$_SESSION["photo_error"] = "Please Choose an image.";
-	header("location: register.php");
-}
+				$_SESSION["photo_error"] = "Please Choose an image.";
+				$error_status = true;
+			}
 
 
 
 
-/* if(empty($userName)){
+ if(empty($userName)){
 	$_SESSION["name_error"] = "Name field is required";
 	$error_status = true;
 }else{
@@ -71,12 +84,32 @@ if(empty($userDistrict)){
 	$_SESSION["district"] = $userDistrict;
 }
 
- */
 
 
-/* if($error_status){
+
+ if($error_status){
 	header("location: register.php");
 }else{
-	
-} */
+
+/* 	$checking_email = "SELECT * FROM `registration` WHERE email = '$userEmail"; */
+	$checking_email = "SELECT COUNT(*) as status FROM `registration` WHERE email = '$userEmail'";
+	$checking_email_output = mysqli_query($db_connect, $checking_email);
+	$checking_email_output_array = mysqli_fetch_assoc($checking_email_output);
+	print_r($checking_email_output_array);
+
+	if($checking_email_output_array["status"] == 0){
+		$encripted_password = md5($userPassword);
+		$insert_registration = "INSERT INTO `registration`(`name`, `email`, `district`, `image`, `password`) VALUES ('$userName','$userEmail','$userDistrict','$userPhoto','$encripted_password')";
+		mysqli_query($db_connect, $insert_registration);
+		$_SESSION["registration_success"] = "Your registration Successfully";
+		header("location: login.php");
+	}else{
+		$_SESSION["email_error"] = "This email alreay taken";
+		header("location: register.php");
+	}
+	/* $insert_registration = "INSERT INTO `registration`(`name`, `email`, `district`, `image`, `password`) VALUES ('$userName','$userEmail','$userDistrict','$userPhoto','$userPassword')";
+	mysqli_query($db_connect, $insert_registration);
+	$_SESSION["insert_success"] = "Your registration Successfully";
+	header("location: register.php"); */
+} 
 ?>
