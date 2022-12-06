@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,25 +33,51 @@
                 </div>
                 <h4>New here?</h4>
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-                <form class="pt-3">
+                <form class="pt-3" action="registration_validation.php" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="user_name">
+                  <?php if(isset($_SESSION["name_error"])):?>
+                    <span class="text-danger"><?=$_SESSION["name_error"]?></span>
+                    <?php endif;?>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="user_email">
+                    <?php if(isset($_SESSION["email_error"])):?>
+                      <span class="text-danger"><?=$_SESSION["email_error"]?></span>
+                      <?php endif;?>
                   </div>
                   <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="District" name="district">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="District" name="user_district">
+                  <?php if(isset($_SESSION["district_error"])):?>
+                    <span class="text-danger"><?=$_SESSION["district_error"]?></span>
+                    <?php endif;?>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="user_password">
+                    <?php if(isset($_SESSION["password_error"])):?>
+                      <span class="text-danger"><?=$_SESSION["password_error"]?></span>
+                      <?php endif;?>
                   </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Confirm Password" name="user_confirm__password">
+                    <?php if(isset($_SESSION["confirm_password_error"])):?>
+                      <span class="text-danger"><?=$_SESSION["confirm_password_error"]?></span>
+                      <?php endif;?>
+                  </div>
+                  <div class="form-group">
+                  <label for="formFileMultiple" class="form-label">Upload your photo</label>
+                  <input class="form-control" type="file" id="formFileMultiple" name="user_photo">
+                  <?php if(isset($_SESSION["photo_error"])):?>
+                    <span class="text-danger"><?=$_SESSION["photo_error"]?></span>
+                    <?php endif;?>
+                </div>
                   <div class="mb-4">
                     <div class="form-check">
                       <label class="form-check-label text-muted">
                         <input type="checkbox" class="form-check-input"> I agree to all Terms & Conditions </label>
                     </div>
                   </div>
+                  <?php session_unset();?>
                   <div class="mt-3">
                     <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"> Registration</button>
                   </div>
